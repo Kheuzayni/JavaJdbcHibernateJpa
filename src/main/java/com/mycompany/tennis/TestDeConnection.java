@@ -11,7 +11,8 @@ public class TestDeConnection {
 
             //MySQL driver MySQL Connector
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/tennis?useSSL=false&useLegacyDatetimeCode=false&serverTimezone=Europe/Paris","root","");
-
+            //Test connexion
+            System.out.println("\n success Test acces bdd");
             //Oracle Driver officiel OJDBC Thin
             //conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:tennis","root","");
             //Postgres Driver officiel
@@ -51,7 +52,7 @@ public class TestDeConnection {
 
             //Lire un enregistrement paramétré avec preparedStatement
             PreparedStatement preparedStatement = conn.prepareStatement("SELECT NOM, PRENOM, ID FROM JOUEUR WHERE ID=?");
-            long identifiant = 25L;
+            long identifiant = 25;
             preparedStatement.setLong(1, identifiant);
 
             ResultSet rs = preparedStatement.executeQuery();
@@ -60,15 +61,14 @@ public class TestDeConnection {
                 final String prenom = rs.getNString("PRENOM");
                 final String nom = rs.getNString("NOM");
                 final Long id= rs.getLong("ID");
-                System.out.println("Le (la) joueur (euse) " +identifiant+" est representé(e) par "+prenom+" "+nom);
+                System.out.println("Le (la) joueur (se) " +identifiant+" est representé(e) par "+prenom+" "+nom);
             }
             else {
                 System.out.println("Il n'y a pas d'enregistrement avec l'id "+identifiant);
             }
             //fin Lire un enregistrement paramétré avec preparedStatement
 
-            //Test connexion
-            System.out.println("\n success Test acces bdd");
+
 
         } catch (SQLException e) {
             e.printStackTrace();
