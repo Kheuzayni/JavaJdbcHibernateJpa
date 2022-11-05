@@ -11,11 +11,13 @@ public class TestDeConnection {
 
             //MySQL driver MySQL Connector
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/tennis?useSSL=false&useLegacyDatetimeCode=false&serverTimezone=Europe/Paris","root","");
-
+            //Test connexion
+            System.out.println("\n success Test acces bdd");
             //Oracle Driver officiel OJDBC Thin
             //conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:tennis","root","");
             //Postgres Driver officiel
             //conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/tennis","root","");
+/*
 
             //Lire les enregistrements de ma base
                 Statement statement = conn.createStatement();
@@ -28,6 +30,7 @@ public class TestDeConnection {
                     System.out.println("Le (la) joueur (euse) " +id+" est representé(e) par "+prenom+" "+nom);
                 }
             //fin lecture des enregistrements de ma base
+*/
 
         /*
             //Recupérer avec un enregistrement précis
@@ -46,8 +49,26 @@ public class TestDeConnection {
             //Fin lecture avec un enregistrement précis
          */
 
-            //Test connexion
-            System.out.println("\n success ame nga ndy accès si bdd bi");
+
+            //Lire un enregistrement paramétré avec preparedStatement
+            PreparedStatement preparedStatement = conn.prepareStatement("SELECT NOM, PRENOM, ID FROM JOUEUR WHERE ID=?");
+            long identifiant = 25;
+            preparedStatement.setLong(1, identifiant);
+
+            ResultSet rs = preparedStatement.executeQuery();
+
+            if (rs.next()){
+                final String prenom = rs.getNString("PRENOM");
+                final String nom = rs.getNString("NOM");
+                final Long id= rs.getLong("ID");
+                System.out.println("Le (la) joueur (se) " +identifiant+" est representé(e) par "+prenom+" "+nom);
+            }
+            else {
+                System.out.println("Il n'y a pas d'enregistrement avec l'id "+identifiant);
+            }
+            //fin Lire un enregistrement paramétré avec preparedStatement
+
+
 
         } catch (SQLException e) {
             e.printStackTrace();
