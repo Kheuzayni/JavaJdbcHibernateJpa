@@ -8,9 +8,21 @@ public class jdbcAppli {
         public static void main(String... args){
             Connection conn = null;
             try {
-                //Utilisation de DataSource
+             //Utilisation de DataSource
+              /*
+                //1er option
                 MysqlDataSource dataSource = new MysqlDataSource();
                 dataSource.setUrl("jdbc:mysql://localhost:3306/tennis?useSSL=false&useLegacyDatetimeCode=false&serverTimezone=Europe/Paris");
+                dataSource.setUser("root");
+                dataSource.setPassword("");
+                conn = dataSource.getConnection();
+              */
+                //2eme option en séparant les parametres
+                MysqlDataSource dataSource = new MysqlDataSource();
+                dataSource.setServerName("localhost");
+                dataSource.setPort(3306);
+                dataSource.setDatabaseName("tennis");
+                dataSource.setUseSSL(false);
                 dataSource.setUser("root");
                 dataSource.setPassword("");
                 conn = dataSource.getConnection();
