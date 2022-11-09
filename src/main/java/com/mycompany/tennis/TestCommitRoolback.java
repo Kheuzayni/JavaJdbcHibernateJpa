@@ -40,7 +40,7 @@ public class TestCommitRoolback {
 
             preparedStatement.setString(1, nom);
             preparedStatement.setString(2, prenom);
-            preparedStatement.setNull(3, Types.CHAR);
+            preparedStatement.setNull(3, Types.CHAR); //rendre le sexe null qui générera une erreur
 
             preparedStatement.executeUpdate();
 
