@@ -31,15 +31,20 @@
         <artifactId>mysql-connector-java</artifactId>
         <version>8.0.13</version>
       </dependency>
+      <dependency>
+          <groupId>org.apache.commons</groupId>
+          <artifactId>commons-dbcp2</artifactId>
+          <version>2.9.0</version>
+      </dependency>
 
-  <!-- Oracle
-  Disponible uniquement dans le repository Maven Oracle : https://maven.oracle.com
-    <dependency>
-      <groupid>com.oracle.jdbc</groupid>
-      <artifactid>ojdbc8</artifactid>
-      <version>18.3.0.0</version>
-    </dependency>
-   -->
+    <!-- Oracle
+    Disponible uniquement dans le repository Maven Oracle : https://maven.oracle.com
+      <dependency>
+        <groupid>com.oracle.jdbc</groupid>
+        <artifactid>ojdbc8</artifactid>
+        <version>18.3.0.0</version>
+      </dependency>
+     -->
 
     <!-- PostgreSql
     <dependency>
