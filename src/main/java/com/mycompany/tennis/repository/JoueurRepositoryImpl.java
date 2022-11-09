@@ -122,7 +122,7 @@ public class JoueurRepositoryImpl {
             conn = dataSource.getConnection();
 
             //
-            PreparedStatement preparedStatement = conn.prepareStatement("UPDATE FROM `joueur` WHERE ID=?");
+            PreparedStatement preparedStatement = conn.prepareStatement("DELETE FROM `joueur` WHERE ID=?");
 
             preparedStatement.setLong(1, id);
 
