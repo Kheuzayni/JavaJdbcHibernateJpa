@@ -2,13 +2,11 @@ package com.mycompany.tennis.repository;
 
 import com.mycompany.tennis.DataSourceProvider;
 import com.mycompany.tennis.entity.Joueur;
+import com.mysql.cj.protocol.Resultset;
 import org.apache.commons.dbcp2.BasicDataSource;
 
 import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,7 +28,7 @@ public class JoueurRepositoryImpl {
             System.out.println("\n success Test acces bdd");
 
             //
-            PreparedStatement preparedStatement = conn.prepareStatement("INSERT INTO `joueur` (`NOM`, `PRENOM`, `SEXE`) VALUES (?, ?, ?);");
+            PreparedStatement preparedStatement = conn.prepareStatement("INSERT INTO `joueur` (`NOM`, `PRENOM`, `SEXE`) VALUES (?, ?, ?);", Statement.RETURN_GENERATED_KEYS);
 
             String nom="Diop";
             String prenom="Samba";
@@ -42,9 +40,15 @@ public class JoueurRepositoryImpl {
 
             preparedStatement.executeUpdate();
 
+            //recuperer Toutes les valeurs auto-générées  après l'enregistrement
+            ResultSet rs=preparedStatement.getGeneratedKeys();
 
             System.out.println("Joueur ajouté avec succes");
             //fin ajout
+
+            if (rs.next()){
+                joueur.setId(rs.getLong(1));
+            }
 
         } catch (SQLException e) {
             e.printStackTrace();
