@@ -29,12 +29,22 @@ public class Testripo {
 
      /* //Delete Joueur
         joueurRepository.delete(58L);
-      */
+     */
+
+     /*
         //Retourner Liste de joueurs
         List <Joueur> liste = joueurRepository.list();
 
         for (Joueur joueur : liste){
             System.out.println(joueur.getPrenom()+" "+joueur.getNom());
         }
+     */
+        //Créer Joueur en affichant l'identifiant
+        Joueur FallYaram = new Joueur();
+        FallYaram.setNom("Fall");
+        FallYaram.setPrenom("Yaram");
+        FallYaram.setSexe('H');
+        joueurRepository.create(FallYaram);
+        System.out.println("L'identifiant du jouer ("+FallYaram.getPrenom() +" "+ FallYaram.getNom()+") créé est "+FallYaram.getId());
     }
 }
