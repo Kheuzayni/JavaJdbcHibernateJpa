@@ -1,7 +1,7 @@
-package com.mycompany.tennis.controller;
+package com.mycompany.tennis;
 
-import com.mycompany.tennis.controller.entity.Tournoi;
-import com.mycompany.tennis.controller.repository.TournoiRepositoryImpl;
+import com.mycompany.tennis.entity.Tournoi;
+import com.mycompany.tennis.repository.TournoiRepositoryImpl;
 
 import java.util.List;
 

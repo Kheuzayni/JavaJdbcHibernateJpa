@@ -1,7 +1,7 @@
-package com.mycompany.tennis.controller;
+package com.mycompany.tennis;
 
-import com.mycompany.tennis.controller.entity.Joueur;
-import com.mycompany.tennis.controller.repository.JoueurRepositoryImpl;
+import com.mycompany.tennis.entity.Joueur;
+import com.mycompany.tennis.repository.JoueurRepositoryImpl;
 
 public class Testripo {
     public static void main(String... args){

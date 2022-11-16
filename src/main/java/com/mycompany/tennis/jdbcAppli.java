@@ -1,4 +1,4 @@
-package com.mycompany.tennis.controller;
+package com.mycompany.tennis;
 
 import com.mysql.cj.jdbc.MysqlDataSource;
 

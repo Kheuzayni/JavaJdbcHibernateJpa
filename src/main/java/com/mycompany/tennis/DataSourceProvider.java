@@ -1,4 +1,4 @@
-package com.mycompany.tennis.controller;
+package com.mycompany.tennis;
 
 
 import org.apache.commons.dbcp2.BasicDataSource;

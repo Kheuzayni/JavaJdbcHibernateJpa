@@ -1,4 +1,4 @@
-package com.mycompany.tennis.controller;
+package com.mycompany.tennis;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

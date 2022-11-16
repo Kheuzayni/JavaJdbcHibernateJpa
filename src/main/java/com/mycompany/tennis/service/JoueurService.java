@@ -1,8 +1,8 @@
-package com.mycompany.tennis.controller.service;
+package com.mycompany.tennis.service;
 
-import com.mycompany.tennis.controller.HibernateUtil;
-import com.mycompany.tennis.controller.entity.Joueur;
-import com.mycompany.tennis.controller.repository.JoueurRepositoryImpl;
+import com.mycompany.tennis.HibernateUtil;
+import com.mycompany.tennis.entity.Joueur;
+import com.mycompany.tennis.repository.JoueurRepositoryImpl;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
