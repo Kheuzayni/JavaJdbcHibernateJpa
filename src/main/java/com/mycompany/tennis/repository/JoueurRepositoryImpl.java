@@ -1,8 +1,8 @@
-package com.mycompany.tennis.controller.repository;
+package com.mycompany.tennis.repository;
 
-import com.mycompany.tennis.controller.DataSourceProvider;
-import com.mycompany.tennis.controller.HibernateUtil;
-import com.mycompany.tennis.controller.entity.Joueur;
+import com.mycompany.tennis.DataSourceProvider;
+import com.mycompany.tennis.HibernateUtil;
+import com.mycompany.tennis.entity.Joueur;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.hibernate.Session;
 

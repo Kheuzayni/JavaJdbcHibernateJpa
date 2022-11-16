@@ -1,8 +1,8 @@
-package com.mycompany.tennis.controller.service;
+package com.mycompany.tennis.service;
 
-import com.mycompany.tennis.controller.entity.Match;
-import com.mycompany.tennis.controller.repository.MatchRepositoryImpl;
-import com.mycompany.tennis.controller.repository.ScoreRepositoryImpl;
+import com.mycompany.tennis.entity.Match;
+import com.mycompany.tennis.repository.MatchRepositoryImpl;
+import com.mycompany.tennis.repository.ScoreRepositoryImpl;
 
 public class MatchService {
 

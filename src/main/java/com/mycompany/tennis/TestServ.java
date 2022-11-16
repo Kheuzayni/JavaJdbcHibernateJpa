@@ -1,9 +1,9 @@
-package com.mycompany.tennis.controller;
+package com.mycompany.tennis;
 
-import com.mycompany.tennis.controller.service.JoueurService;
-import com.mycompany.tennis.controller.service.TournoiService;
-import com.mycompany.tennis.controller.entity.Joueur;
-import com.mycompany.tennis.controller.entity.Tournoi;
+import com.mycompany.tennis.service.JoueurService;
+import com.mycompany.tennis.service.TournoiService;
+import com.mycompany.tennis.entity.Joueur;
+import com.mycompany.tennis.entity.Tournoi;
 
 public class TestServ {
 

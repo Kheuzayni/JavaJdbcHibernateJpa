@@ -35,8 +35,13 @@
 
 
 		<!-- Enities to map -->
-        <mapping class="com.mycompany.tennis.gestionTennis.entity.Joueur" />
-		<mapping class="com.mycompany.tennis.gestionTennis.entity.Tournoi" />
+        <mapping class="com.mycompany.tennis.entity.Joueur" />
+		<mapping class="com.mycompany.tennis.entity.Tournoi" />
+        <mapping class="com.mycompany.tennis.entity.Epreuve" />
+
+        <!--<mapping class="com.mycompany.tennis.gestionTennis.entity.Joueur" />
+        <mapping class="com.mycompany.tennis.gestionTennis.entity.Tournoi" />
+        <mapping class="com.mycompany.tennis.gestionTennis.entity.Epreuve" />-->
 
     </session-factory>
 

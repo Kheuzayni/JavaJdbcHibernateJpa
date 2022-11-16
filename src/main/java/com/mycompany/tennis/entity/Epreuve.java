@@ -1,10 +1,16 @@
-package com.mycompany.tennis.controller.entity;
+package com.mycompany.tennis.entity;
 
+
+import javax.persistence.*;
 
 public class Epreuve {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Short annee;
+    @Column(name = "TYPE_EPREUVE")
     private Character TypeEpreuve;
+    @Transient
     private Tournoi tournoi;
 
     public Long getId() {

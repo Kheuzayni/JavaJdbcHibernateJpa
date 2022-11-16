@@ -1,4 +1,4 @@
-package com.mycompany.tennis.controller.entity;
+package com.mycompany.tennis.entity;
 
 public class Match {
     private Long id;

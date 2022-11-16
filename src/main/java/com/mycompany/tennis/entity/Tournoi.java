@@ -1,4 +1,4 @@
-package com.mycompany.tennis.controller.entity;
+package com.mycompany.tennis.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

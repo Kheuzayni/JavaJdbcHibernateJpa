@@ -1,10 +1,10 @@
-package com.mycompany.tennis.controller;
+package com.mycompany.tennis;
 
-import com.mycompany.tennis.controller.entity.Joueur;
-import com.mycompany.tennis.controller.service.MatchService;
-import com.mycompany.tennis.controller.entity.Epreuve;
-import com.mycompany.tennis.controller.entity.Match;
-import com.mycompany.tennis.controller.entity.Score;
+import com.mycompany.tennis.entity.Joueur;
+import com.mycompany.tennis.service.MatchService;
+import com.mycompany.tennis.entity.Epreuve;
+import com.mycompany.tennis.entity.Match;
+import com.mycompany.tennis.entity.Score;
 
 public class TestMatchScore {
 
