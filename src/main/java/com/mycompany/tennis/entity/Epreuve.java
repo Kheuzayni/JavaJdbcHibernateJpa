@@ -10,7 +10,9 @@ public class Epreuve {
     private Short annee;
     @Column(name = "TYPE_EPREUVE")
     private Character TypeEpreuve;
-    @Transient
+//    @Transient
+    @ManyToOne
+    @JoinColumn(name = "ID_TOURNOI")
     private Tournoi tournoi;
 
     public Long getId() {
