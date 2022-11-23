@@ -1,9 +1,19 @@
 package com.mycompany.tennis.entity;
 
+import javax.persistence.*;
+
 public class Match {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn (name = "ID_VAINQUER")
     private Joueur Vainqueur;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn (name = "ID_FINALISTE")
     private Joueur Finaliste;
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="ID_EPREUVE")
     private Epreuve epreuve;
     private Score score;
 

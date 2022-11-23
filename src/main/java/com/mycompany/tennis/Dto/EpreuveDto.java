@@ -10,11 +10,7 @@ import javax.persistence.ManyToOne;
 public class EpreuveDto extends Epreuve {
     private Long id;
     private Short annee;
-    @Column(name = "TYPE_EPREUVE")
     private Character TypeEpreuve;
-    //    @Transient
-    @ManyToOne
-    @JoinColumn(name = "ID_TOURNOI")
     private Tournoi tournoi;
 
     public Long getId() {
