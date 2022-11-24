@@ -20,7 +20,7 @@ public class JoueurService {
 
 
     //methode qui retourne la liste de joueurs
-    public List<JoueurDto> getListeJoeurs(){
+    public List<JoueurDto> getListeJoeurs(char sexe){
         Session session=null;
         Transaction tx=null;
 
@@ -29,7 +29,7 @@ public class JoueurService {
         try {
             session = HibernateUtil.getSessionFactory().getCurrentSession();
             tx = session.beginTransaction();
-            List<Joueur> joueurs = joueurRepository.list();
+            List<Joueur> joueurs = joueurRepository.list(sexe);
 
             for (Joueur joueur: joueurs){
                 final JoueurDto dto = new JoueurDto();
@@ -37,7 +37,7 @@ public class JoueurService {
                 dto.setNom(joueur.getNom());
                 dto.setPrenom(joueur.getPrenom());
                 dto.setSexe(joueur.getSexe());
-                dtos.add(dto);   //dtos dans JoueurDto
+                dtos.add(dto);   //dtos à ajouté dans JoueurDto
             }
 
             tx.commit();
