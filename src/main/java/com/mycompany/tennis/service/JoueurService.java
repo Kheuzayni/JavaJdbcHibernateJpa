@@ -1,17 +1,60 @@
 package com.mycompany.tennis.service;
 
+import com.mycompany.tennis.Dto.JoueurDto;
 import com.mycompany.tennis.HibernateUtil;
 import com.mycompany.tennis.entity.Joueur;
 import com.mycompany.tennis.repository.JoueurRepositoryImpl;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-public class JoueurService {
-      private JoueurRepositoryImpl joueurRepository;
-      public JoueurService (){
+import java.util.ArrayList;
+import java.util.List;
 
-          this.joueurRepository = new JoueurRepositoryImpl();
+public class JoueurService {
+    private JoueurRepositoryImpl joueurRepository;
+
+    public JoueurService (){
+
+        this.joueurRepository = new JoueurRepositoryImpl();
+    }
+
+
+    //methode qui retourne la liste de joueurs
+    public List<JoueurDto> getListeJoeurs(){
+        Session session=null;
+        Transaction tx=null;
+
+        List<JoueurDto> joueurDtos = new ArrayList<>();
+
+        try {
+            session = HibernateUtil.getSessionFactory().getCurrentSession();
+            tx = session.beginTransaction();
+            List<Joueur> joueurs = joueurRepository.list();
+
+            for (Joueur joueur: joueurs){
+                final JoueurDto dto = new JoueurDto();
+                dto.setId(joueur.getId());
+                dto.setNom(joueur.getNom());
+                dto.setPrenom(joueur.getPrenom());
+                dto.setSexe(joueur.getSexe());
+                dtos.add(dto);   //dtos dans JoueurDto
+            }
+
+            tx.commit();
         }
+        catch (Exception e){
+            if (tx!=null){
+                tx.rollback();
+            }
+            e.printStackTrace();
+        }
+        finally {
+            if (session!=null){
+                session.close();
+            }
+        }
+        return dtos;
+    }
 
     public void createJoueur (Joueur joueur){
         Session session=null;
