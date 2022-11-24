@@ -2,6 +2,7 @@ package com.mycompany.tennis.entity;
 
 
 import javax.persistence.*;
+import java.util.Set;
 
 public class Epreuve {
     @Id
@@ -14,6 +15,16 @@ public class Epreuve {
     @ManyToOne
     @JoinColumn(name = "ID_TOURNOI")
     private Tournoi tournoi;
+
+
+    @ManyToMany
+    @JoinTable (
+            name = "PARTICIPANTS",
+            joinColumns = {@JoinColumn(name = "ID_EPREUVE")},
+            inverseJoinColumns = {@JoinColumn(name = "ID_JOUEUR")}
+    )
+    private Set <Joueur> participants;
+
 
     public Long getId() {
         return id;
@@ -45,5 +56,13 @@ public class Epreuve {
 
     public void setTournoi(Tournoi tournoi) {
         this.tournoi = tournoi;
+    }
+
+    public Set<Joueur> getParticipants() {
+        return participants;
+    }
+
+    public void setParticipants(Set<Joueur> participants) {
+        this.participants = participants;
     }
 }

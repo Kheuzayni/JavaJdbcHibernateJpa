@@ -1,11 +1,13 @@
 package com.mycompany.tennis.Dto;
 
 import com.mycompany.tennis.entity.Epreuve;
+import com.mycompany.tennis.entity.Joueur;
 import com.mycompany.tennis.entity.Tournoi;
 
 import javax.persistence.Column;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import java.util.Set;
 
 public class EpreuveDto extends Epreuve {
     private Long id;
@@ -13,6 +15,7 @@ public class EpreuveDto extends Epreuve {
     private Character TypeEpreuve;
     private Tournoi tournoi;
 
+ //   private Set <JoueurDto> participants;
     public Long getId() {
         return id;
     }

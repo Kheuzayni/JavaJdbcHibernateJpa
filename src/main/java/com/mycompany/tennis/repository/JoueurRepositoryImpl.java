@@ -4,7 +4,9 @@ import com.mycompany.tennis.DataSourceProvider;
 import com.mycompany.tennis.HibernateUtil;
 import com.mycompany.tennis.entity.Joueur;
 import org.apache.commons.dbcp2.BasicDataSource;
+import org.hibernate.QueryException;
 import org.hibernate.Session;
+import org.hibernate.query.Query;
 
 import javax.sql.DataSource;
 import java.sql.*;
@@ -232,6 +234,15 @@ public class JoueurRepositoryImpl {
     //Methode liste de joueur
     public List<Joueur> list(){
 
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        Query<Joueur> query = session.createQuery("select j from Joueur j", Joueur.class);
+   //   Query<Joueur> query = session.createQuery("from Joueur", Joueur.class);
+        List<Joueur> joueurs =query.getResultList() ;
+
+        System.out.println("Liste des Joueurs lus");
+        return joueurs;
+
+/*
         Connection conn = null;
         List<Joueur> joueurs=new ArrayList<>(); //On intancie
 
@@ -280,6 +291,6 @@ public class JoueurRepositoryImpl {
                 e.printStackTrace();
             }
         }
-        return joueurs;
+        return joueurs;*/
     }
 }
