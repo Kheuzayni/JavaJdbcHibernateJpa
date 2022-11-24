@@ -37,7 +37,7 @@ public class JoueurService {
                 dto.setNom(joueur.getNom());
                 dto.setPrenom(joueur.getPrenom());
                 dto.setSexe(joueur.getSexe());
-                dtos.add(dto);   //dtos dans JoueurDto
+                dtos.add(dto);   //dtos à ajouté dans JoueurDto
             }
 
             tx.commit();
