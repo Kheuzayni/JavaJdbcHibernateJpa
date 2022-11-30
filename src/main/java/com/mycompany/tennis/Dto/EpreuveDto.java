@@ -48,3 +48,5 @@ public class EpreuveDto extends Epreuve {
         this.tournoi = tournoi;
     }
 }
+
+//JPA
